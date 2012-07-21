@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: copperegg-chef
+# Cookbook Name:: copperegg-engineyard
 # Recipe:: default
 #
 # Copyright 2012, CopperEgg
@@ -8,7 +8,7 @@
 # Your user api key, found on this page:
 # https://app.copperegg.com/#settings/user
 # REQUIRED.  Revealcloud will not work without this attribute.
-copperegg :apikey => "tWMAHbPIpqItwTkk",
+copperegg :apikey => "Your User API Key",
 
 # Comma and/or space separated list of tags to apply.  Useful for grouping systems.
 # Tags are managed here:  https://app.copperegg.com/#revealcloud/tags
@@ -20,7 +20,7 @@ copperegg :apikey => "tWMAHbPIpqItwTkk",
 # Optional.  This field may be left blank.
 # Example: "devserver"
 # Example: "database,replica,production"
-:tags => "engineyard,testing",
+:tags => "",
 
 # Label to apply to this system.  Only one may be specified.
 # WARNING: labels are used in place of hostname.

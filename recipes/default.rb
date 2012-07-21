@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: copperegg-chef
+# Cookbook Name:: copperegg-engineyard
 # Recipe:: default
 #
 # Copyright 2012, CopperEgg
