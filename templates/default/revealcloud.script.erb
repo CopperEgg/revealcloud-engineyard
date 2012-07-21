@@ -1,0 +1,109 @@
+#!/bin/sh
+# Author: CopperEgg <support@copperegg.com>
+#
+
+# install defaults
+INSTALL_ROOT="/usr/local/revealcloud"
+INSTALL_BIN="$INSTALL_ROOT/revealcloud"
+RUNDIR="$INSTALL_ROOT/run"
+PIDFILE="$RUNDIR/revealcloud.pid"
+EXTRA_ARGS=""
+SCRIPTNAME="/usr/bin/revealcloud.sh"
+
+API_HOST="api.copperegg.com"
+APP_HOST="app.copperegg.com"
+
+RCUSER=revealcloud
+RCGROUP=${RCUSER}
+VERBOSE=yes
+
+RC_APIKEY='<%= @apikey %>'
+RC_PROXY='<%= @proxy %>'
+RC_OOM_PROTECT='<%= @oom_protect %>'
+RC_UUID='<%= @use_fqdn %>'
+RC_TAG='<%= @tags %>'
+RC_LABEL='<%= @label %>'
+RC_FQDN='<%= @rc_fqdn %>'
+
+if [ ! -z "$RC_PROXY" ]; then
+    PROXY_SETTING="-p "${RC_PROXY}
+    CURL_PROXY_SETTING="-x "${RC_PROXY}
+fi
+
+if [ ! -z "$RC_LABEL" ]; then
+    LABEL_SETTING="-l "${RC_LABEL}
+fi
+
+if [ ! -z "$RC_TAG" ]; then
+    TAG_SETTING=""
+    for tag in `echo ${RC_TAG} | sed -e 's/,/ /g'`; do
+        TAG_SETTING="${TAG_SETTING} -t "${tag}
+    done
+fi
+
+if [ ! -z "$RC_UUID" ]; then
+    # If RC_UUID is set to 0/false/no/null, do nothing.
+    # Else pass the fqdn to revealcloud using -U
+    case "$RC_UUID" in
+        0|f*|n*)
+            UUID_SETTING=""
+        ;;
+        *)
+            UUID_SETTING="-U "${RC_FQDN}
+        ;;
+    esac
+fi
+
+if [ ! -z "$RC_OOM_PROTECT" ]; then
+    # If OOM_PROTECT is set to 0/false/no/null, do nothing.
+    # Else enable oom protection with -O
+    case "$RC_OOM_PROTECT" in
+        0|f*|n*)
+            OOM_SETTING=""
+        ;;
+        *)
+            OOM_SETTING="-O "
+        ;;
+    esac
+fi
+
+DESC="analytics collection for CopperEgg revealcloud"
+NAME=revealcloud
+DAEMON=$INSTALL_BIN
+DAEMON_ARGS="-d -x -a ${API_HOST} -k ${RC_APIKEY} ${PROXY_SETTING} ${OOM_SETTING} ${UUID_SETTING} ${TAG_SETTING} ${LABEL_SETTING} -P ${RUNDIR} ${EXTRA_ARGS}"
+
+# Exit if the file is not found
+[ -x "$DAEMON" ] || exit 0
+
+case "$1" in
+    start)
+		su $RCUSER -c "$DAEMON $DAEMON_ARGS"
+        ;;
+    stop)
+		if [ -e "$PIDFILE" ]; then
+        	kill `cat $PIDFILE`
+        	rm $PIDFILE
+		elif [ "`pidof $DAEMON`" != "" ]; then
+        	pkill revealcloud
+    	else
+        	echo "ERROR: Revealcloud process not running, or pidfile $PIDFILE does not exist"
+    	fi
+        ;;
+    status)
+        ;;
+    restart)
+		if [ -e "$PIDFILE" ]; then
+        	kill `cat $PIDFILE`
+        	rm $PIDFILE
+		elif [ "`pidof $DAEMON`" != "" ]; then
+        	pkill revealcloud
+    	else
+        	echo "ERROR: Revealcloud process not running, or pidfile $PIDFILE does not exist"
+    	fi
+		su $RCUSER -c "$DAEMON $DAEMON_ARGS"
+        ;;
+    *)
+        echo "Usage: $SCRIPTNAME {start|stop|status|restart}" >&2
+        ;;
+esac
+exit 0
