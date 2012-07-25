@@ -3,7 +3,7 @@ CopperEgg Cookbook for the Engine Yard Cloud
 
 copperegg-engineyard
 ===========
-* Chef cookbook for installing the CopperEgg collector agent on the Engine Yard Cloud.
+* Chef cookbook for installing the CopperEgg RevealCloud collector agent on the Engine Yard Cloud.
 * Requires a CopperEgg account to use. [Free trial available](https://app.copperegg.com/signup).
 
 Requirements
@@ -17,7 +17,7 @@ Platform
 
 Attributes
 ==========
-* `[:copperegg][:apikey]` = Your User API Key available from the [RevealCloud App Settings Page](https://app.copperegg.com/#settings/user).
+* `[:copperegg][:apikey]` = Your User API Key available from the [CopperEgg App Settings Page](https://app.copperegg.com/#settings/user).
 * `[:copperegg][:tags]` = A comma separated list of tags to apply.  Optional.  [Manage your tags](https://app.copperegg.com/#revealcloud/tags).
 * `[:copperegg][:label]` = Label to apply in place of hostname when displaying in the dashboard.  WARNING: If you want the same label applied to multiple systems, you may want to consider tags instead.  This is most useful if you intend a recipe for a single server.  Optional.
 * `[:copperegg][:proxy]` = Proxy server required to talk to the revealcloud api servers, such as `myproxy.mycorp.com:8080`.  Optional.  Leave blank unless you know what you are doing.
@@ -36,8 +36,8 @@ Installation
 Links
 =====
 * [CopperEgg Homepage](http://www.copperegg.com)
-* [RevealCloud Signup](https://app.copperegg.com/signup)
-* [RevealCloud Login](https://app.copperegg.com/login)
+* [CopperEgg Signup](https://app.copperegg.com/signup)
+* [CopperEgg Login](https://app.copperegg.com/login)
 * [Custom Chef recipes — examples & best practices](https://support.cloud.engineyard.com/entries/21406977-custom-chef-recipes-examples-best-practices)
 * [Customize your environment with Chef recipes](https://support.cloud.engineyard.com/entries/21009867-custom-chef-recipes)
 
