@@ -1,8 +1,8 @@
 #!/sbin/runscript
 # Cookbook Name:: copperegg-engineyard
-# Copyright 2012, CopperEgg
+# Copyright 2012, IDERA
 #
-# Author: CopperEgg <support@copperegg.com>
+# Author: IDERA <support@idera.com>
 #
 
 # install defaults
@@ -68,7 +68,7 @@ if [ ! -z "$RC_OOM_PROTECT" ]; then
     esac
 fi
 
-DESC="analytics collection for CopperEgg revealcloud"
+DESC="analytics collection for Uptime Cloud Monitor revealcloud"
 NAME=revealcloud
 DAEMON=$INSTALL_BIN
 DAEMON_ARGS="-d -x -a ${API_HOST} -k ${RC_APIKEY} ${PROXY_SETTING} ${OOM_SETTING} ${UUID_SETTING} ${TAG_SETTING} ${LABEL_SETTING} -P ${RUNDIR} ${EXTRA_ARGS}"

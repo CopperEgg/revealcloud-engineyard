@@ -2,7 +2,7 @@
 # Cookbook Name:: copperegg-engineyard
 # Recipe:: default
 #
-# Copyright 2012, CopperEgg
+# Copyright 2012, IDERA
 #
 
 # Your user api key, found on this page:
