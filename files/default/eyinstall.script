@@ -1,7 +1,7 @@
 # Cookbook Name:: copperegg-engineyard
-# Copyright 2012, CopperEgg
+# Copyright 2012, IDERA
 #
-# Author: CopperEgg <support@copperegg.com>
+# Author: Uptime Cloud Monitor <support@idera.com>
 #
 ######################################################################
 
@@ -26,7 +26,7 @@ RevealCloud may not start.  Please install glibc and
 try running the installer again.
 
 For more information or help, please contact:
-support@copperegg.com
+support@idera.com
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 
@@ -46,7 +46,7 @@ RevealCloud may not start.  Please update glibc to
 version 2.4 or later, and run the installer again.
 
 For more information or help, please contact:
-support@copperegg.com
+support@idera.com
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 
@@ -122,7 +122,7 @@ WARNING:  /proc/net/dev does not exist!
 Some functions of RevealCloud may not function properly.
 
 For more information, please contact:
-support@copperegg.com
+support@idera.com
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 

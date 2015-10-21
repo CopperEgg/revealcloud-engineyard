@@ -1,10 +1,10 @@
-CopperEgg Cookbook for the Engine Yard Cloud
+Uptime Cloud Monitor Cookbook for the Engine Yard Cloud
 ============================================
 
 copperegg-engineyard
 ===========
-* Chef cookbook for installing the CopperEgg RevealCloud collector agent on the Engine Yard Cloud.
-* Requires a CopperEgg account to use. [Free trial available](https://app.copperegg.com/signup).
+* Chef cookbook for installing the Uptime Cloud Monitor RevealCloud collector agent on the Engine Yard Cloud.
+* Requires a Uptime Cloud Monitor account to use. [Free trial available](https://www.idera.com/infrastructure-monitoring-as-a-service/freetrialsubscriptionform).
 
 Requirements
 ============
@@ -35,9 +35,9 @@ Installation
 
 Links
 =====
-* [CopperEgg Homepage](http://www.copperegg.com)
-* [CopperEgg Signup](https://app.copperegg.com/signup)
-* [CopperEgg Login](https://app.copperegg.com/login)
+* [Uptime Cloud Monitor Homepage](https://www.idera.com/infrastructure-monitoring-as-a-service/)
+* [Uptime Cloud Monitor Signup](https://www.idera.com/infrastructure-monitoring-as-a-service/freetrialsubscriptionform)
+* [Uptime Cloud Monitor Login](https://app.copperegg.com/login)
 * [Custom Chef recipes — examples & best practices](https://support.cloud.engineyard.com/entries/21406977-custom-chef-recipes-examples-best-practices)
 * [Customize your environment with Chef recipes](https://support.cloud.engineyard.com/entries/21009867-custom-chef-recipes)
 
@@ -45,7 +45,7 @@ License and Author
 ==================
 Author:: Ross Dickey
 
-Copyright 2012, CopperEgg, Inc.
+Copyright 2012, IDERA.
 
 No License.  Redistribution encouraged.
 
