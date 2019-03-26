@@ -1,7 +1,7 @@
 Uptime Cloud Monitor Cookbook for the Engine Yard Cloud
 ============================================
 
-copperegg-engineyard
+revealcloud-engineyard
 ===========
 * Chef cookbook for installing the Uptime Cloud Monitor RevealCloud collector agent on the Engine Yard Cloud.
 * Requires a Uptime Cloud Monitor account to use. [Free trial available](https://www.idera.com/infrastructure-monitoring-as-a-service/freetrialsubscriptionform).
@@ -21,13 +21,15 @@ Attributes
 * `[:copperegg][:tags]` = A comma separated list of tags to apply.  Optional.  [Manage your tags](https://app.copperegg.com/#revealcloud/tags).
 * `[:copperegg][:label]` = Label to apply in place of hostname when displaying in the dashboard.  WARNING: If you want the same label applied to multiple systems, you may want to consider tags instead.  This is most useful if you intend a recipe for a single server.  Optional.
 * `[:copperegg][:proxy]` = Proxy server required to talk to the revealcloud api servers, such as `myproxy.mycorp.com:8080`.  Optional.  Leave blank unless you know what you are doing.
+* `[:copperegg][:oom_protect]` = Flag for determining if the Linux Out Of Memory manager (OOM) should be allowed to kill the RevealCloud process. Default value is false. Optional.
+* `[:copperegg][:override_uuid]` = This field is provided for the rare case where you want to override the default UUID provided by the underlying platform. Default value is false. Optinal.
 
 Installation
 ============
-1. Create your local chef repo as described in the document'Customize your environment', referenced above.
-2. Download copperegg-engineyard into your local repo, for example, into ey-cloud-recipes/cookbooks/.
-3. Add the following line to cookbooks/main/recipes/default.rb: `require_recipe "copperegg-engineyard"`
-4. Edit `copperegg-engineyard/attributes/default.rb` and replace "Your User API Key".
+1. Create your local chef repo as described in the document 'Customize your environment', referenced below.
+2. Download revealcloud-engineyard into your local repo, for example, into ey-cloud-recipes/cookbooks/.
+3. Add the following line to cookbooks/main/recipes/default.rb: `include_recipe "revealcloud-engineyard"`
+4. Edit `revealcloud-engineyard/attributes/default.rb` and replace "Your User API Key".
 5. Configure any other optional attributes as desired, and save the updated attributes/default.rb file.
 6. Use the EY CLI command 'ey recipes upload -e nameofyourenvironment' to upload your changes to your environment
 7. Use the EY CLI command 'ey recipes apply -e nameofyourenvironment' to cause engineyard to do a Chef run.
