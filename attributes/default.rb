@@ -49,7 +49,7 @@ copperegg :apikey => "Your User API Key",
 # This field is provided for the rare case where you want to override the default UUID 
 # provided by the underlying platform.
 # if non-zero => the contents of this string will be passed to the copperegg collector.
-# 	NOTE: be careful ... you should never pass the same UUID to more than one system!
+# NOTE: be careful ... you should never pass the same UUID to more than one system!
 # if zero => Use the default system UUID. Recommended.
 :override_uuid => false
 
