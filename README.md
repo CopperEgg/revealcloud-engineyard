@@ -27,11 +27,10 @@ Installation
 1. Create your local chef repo as described in the document'Customize your environment', referenced above.
 2. Download copperegg-engineyard into your local repo, for example, into ey-cloud-recipes/cookbooks/.
 3. Add the following line to cookbooks/main/recipes/default.rb: `require_recipe "copperegg-engineyard"`
-4. Edit `copperegg-engineyard/attributes/default.rb` and replace "Your User API Key".
-5. Configure any other optional attributes as desired, and save the updated attributes/default.rb file.
-6. Use the EY CLI command 'ey recipes upload -e nameofyourenvironment' to upload your changes to your environment
-7. Use the EY CLI command 'ey recipes apply -e nameofyourenvironment' to cause engineyard to do a Chef run.
-8. View your systems shortly thereafter in the [RevealCloud App](https://app.copperegg.com/#revealcloud/overview)
+4. Configure any other optional attributes as desired, and save the updated attributes/default.rb file.
+5. Use the EY CLI command 'ey recipes upload -e nameofyourenvironment' to upload your changes to your environment
+6. Use the EY CLI command 'ey recipes apply -e nameofyourenvironment' to cause engineyard to do a Chef run.
+7. View your systems shortly thereafter in the [RevealCloud App](https://app.copperegg.com/#revealcloud/overview)
 
 Links
 =====
